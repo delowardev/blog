@@ -20,7 +20,12 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "2.2.1"
+    "autoprefixer": "^10.2.5",
+    "babel-eslint": "^10.1.0",
+    "gatsby-plugin-eslint": "^3.0.0",
+    "gatsby-plugin-postcss": "^4.3.0",
+    "postcss": "^8.2.10",
+    "tailwindcss": "^2.1.1"
   },
   "keywords": [
     "gatsby"
