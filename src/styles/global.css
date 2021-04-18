@@ -5,7 +5,7 @@
 :root {
     --primary: #6366F1;
     --primary-text: #4B5563;
-    --primary-heading: #1F2937;
+    --primary-heading: #374151;
     --omega: #9CA3AF;
     --omega-dark: #6B7280;
 }
@@ -22,4 +22,8 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--primary-heading);
+}
+
+h1 {
+    @apply text-4xl font-extrabold leading-tight;
 }

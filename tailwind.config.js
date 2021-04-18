@@ -1,6 +1,5 @@
 const { fontFamily, colors, screens } = require('tailwindcss/defaultTheme')
-// const colors = require('tailwindcss/colors')
-
+const forms = require("@tailwindcss/forms")
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: false, // or 'media' or 'class'
@@ -20,7 +19,7 @@ module.exports = {
       ...colors,
       primary: colors.indigo["500"],
       'primary-text': colors.gray["600"],
-      'primary-heading': colors.gray["800"],
+      'primary-heading': colors.gray["700"],
       'omega': '#9CA3AF',
       'omega-dark': '#6B7280'
     },
@@ -32,6 +31,9 @@ module.exports = {
     extend: {},
   },
   plugins: [
-      'gatsby-plugin-postcss'
+      'gatsby-plugin-postcss',
+      forms({
+        strategy: 'class',
+      }),
   ],
 }
