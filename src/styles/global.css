@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --primary: #6366F1;
+    --primary-text: #4B5563;
+    --primary-heading: #1F2937;
+    --omega: #9CA3AF;
+    --omega-dark: #6B7280;
+}
+
+body {
+    @apply bg-gray-100;
+    @apply font-sans;
+    color: var(--primary-text);
+}
+
+a {
+    @apply transition-all;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-heading);
+}
