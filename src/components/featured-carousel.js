@@ -36,10 +36,10 @@ const FeaturedCarousel = () => {
                     {
                         slides.map(slide => (
                             <div className="px-2">
-                                <div className="bg-gray-400 h-80 rounded-2xl p-6 bg-gradient-to-r from-yellow-400 to-red-500 flex flex-col items-start">
-                                    <span className="bg-primary px-2 inline-block text-white rounded-md">
+                                <div className="bg-gray-400 h-80 rounded-2xl px-6 py-8 bg-gradient-to-r from-yellow-400 to-red-500 flex flex-col items-start">
+                                    <Link to={slide.category} className="bg-primary px-2 inline-block text-white rounded-md">
                                         { slide.category }
-                                    </span>
+                                    </Link>
                                     <h2 className="mt-auto text-2xl">
                                         <Link className="text-white block" to={ slide.slug }> { slide.title } </Link>
                                     </h2>
