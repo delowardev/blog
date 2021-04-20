@@ -1,12 +1,48 @@
 import * as React from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+const toastSetting = {
+    position: "bottom-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: false,
+    progress: undefined,
+}
 
 const Contact = () => {
 
     const [state, handleSubmit] = useForm(process.env.GATSBY_FORMSPREE);
 
+    const showError = (msg = null) => {
+        toast.error(msg ? msg : 'Something is wrong! Please try again later.', toastSetting)
+    }
+
+    const showSuccess = () => {
+        toast.success('Thanks for contacting, I will get back to you soon.', toastSetting)
+    }
+
+    const submit = (e) => {
+        handleSubmit(e).then((e) => {
+            if (e.body?.ok) {
+                showSuccess();
+            } else if(e.body?.error) {
+                showError(e.body?.error);
+            } else {
+                showError();
+            }
+        }).catch(() => {
+            showError();
+        })
+    }
+
     return (
-        <div className="container-section">
+        <div className="contact-section">
+            <ToastContainer />
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-8">
@@ -16,7 +52,7 @@ const Contact = () => {
                         </div>
                         <div className="spacing is-lg" />
                         <div className="contact-form">
-                            <form onSubmit={handleSubmit} action="#">
+                            <form onSubmit={submit} action="#">
                                 <div className="row form-row">
                                     <div className="col-6">
                                         <label htmlFor="name">Name *</label>
