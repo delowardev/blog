@@ -2,6 +2,7 @@ import * as React from "react";
 import clsx from "clsx";
 import { Link } from "gatsby";
 import pattern from "../images/pattern.png";
+import GatsbyIcon from "../images/gatsby.svg";
 
 const PostCard = ({ data , className}) => {
 
@@ -15,6 +16,7 @@ const PostCard = ({ data , className}) => {
                         <div className="thumbnail">
                             <Link to={`/` + slug}>
                                 <span className="pattern" style={{ backgroundImage: `url('${pattern}')`}} />
+                                <img className="icon" src={GatsbyIcon} alt="gatsby"/>
                                 { category.name }
                             </Link>
                         </div>

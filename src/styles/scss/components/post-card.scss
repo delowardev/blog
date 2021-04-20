@@ -6,7 +6,7 @@
   .thumbnail a{
     height: 100%;
     min-height: 9.3rem;
-    background: #ecc94b;
+    background: #663399;
     margin: .5rem 0 .5rem .5rem;
     border-radius: 5px;
     display: flex;
@@ -16,7 +16,7 @@
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
-    color: var(--primary-heading);
+    color: white;
     position: relative;
     z-index: 1;
     .pattern {
@@ -26,6 +26,12 @@
       opacity: 0.07;
       left: 0;
       top: 0;
+    }
+    .icon {
+      height: 2rem;
+      width: 2rem;
+      object-fit: contain;
+      margin-bottom: .6rem;
     }
   }
 
