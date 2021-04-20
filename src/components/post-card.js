@@ -24,15 +24,17 @@ const PostCard = ({ data , className}) => {
                     <div className="col">
                         <div className="content">
                             <Link className="category" to={`/` + category.slug }> { category.name } </Link>
-                            <h3 className="title">{ title }</h3>
-                            <div className="row">
+                            <h3 className="title">
+                                <Link to={'/' + slug}>{ title }</Link>
+                            </h3>
+                            <div className="row justify-content-between align-self-stretch">
                                 <div className="col-auto">
                                     <span className="author">{author.name}</span>
                                 </div>
                                 <div className="col-auto">
-                            <span className="date">
-                                {date}
-                            </span>
+                                    <span className="date">
+                                        {date}
+                                    </span>
                                 </div>
                             </div>
                         </div>

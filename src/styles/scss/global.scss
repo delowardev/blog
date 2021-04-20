@@ -8,6 +8,10 @@
   --body-bg: #F3F4F6;
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
   background: var(--body-bg);
   color: var(--primary-text);
@@ -24,6 +28,7 @@ img {
 a {
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 150ms;
   display: inline-block;
+  color: var(--primary);
 }
 
 h1, h2, h3, h4, h5, h6 {
