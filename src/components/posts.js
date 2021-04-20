@@ -1,38 +1,27 @@
 import * as React from "react";
 import Title from "./title";
 import PostCard from "./post-card";
+import { get } from "lodash";
 
-const Posts = ({ category }) => {
+const Posts = ({ data, isFirst }) => {
 
-    const post = {
-        category: {
-            name: "Gatsby",
-            slug: "gatsby"
-        },
-        title: "Magic Flip Cards Solving A Common Sizing Problem",
-        date: "March 20, 2020",
-        slug: "hello",
-        author: {
-            slug: "delowardev",
-            name: "Delowar Hossain",
-            avatar: "https://i.imgur.com/FZjsVZR.jpeg"
-        }
-    };
-
-    const posts = [
-        ...Array(4).fill(post)
-    ]
+    const blogPosts = get(data, "edges")
+    if (!blogPosts.length) return null;
+    const category = get(blogPosts[0], "node.category")
 
     return (
         <div className="posts-section">
-            <Title title="Javascript" to="/" />
+            {
+                !isFirst && <div className="spacing is-lg" />
+            }
+            <Title title={category.name} to={'/category/' + category.slug} />
             <div className="spacing" />
             <div className="container">
                 <div className="posts">
                     <div className="row no-gutters">
                         {
-                            posts.map((p, k) => (
-                                <PostCard className="col-6 post-item" key={k} data={p} />
+                            blogPosts?.map((p, k) => (
+                                <PostCard className="col-6 post-item" key={k} data={p.node} />
                             ))
                         }
                     </div>

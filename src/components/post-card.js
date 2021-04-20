@@ -6,7 +6,11 @@ import GatsbyIcon from "../images/gatsby.svg";
 
 const PostCard = ({ data , className}) => {
 
-    const { slug, category, title, author, date } = data;
+    const { slug, category, title, publishDate, author } = data;
+
+    console.log(data);
+
+    // return null;
 
     return (
         <div className={clsx(className, "post-card")}>
@@ -14,7 +18,7 @@ const PostCard = ({ data , className}) => {
                 <div className="row no-gutters">
                     <div className="col-4">
                         <div className="thumbnail">
-                            <Link to={`/` + slug}>
+                            <Link to={`/blog/` + slug}>
                                 <span className="pattern" style={{ backgroundImage: `url('${pattern}')`}} />
                                 <img className="icon" src={GatsbyIcon} alt="gatsby"/>
                                 { category.name }
@@ -23,9 +27,9 @@ const PostCard = ({ data , className}) => {
                     </div>
                     <div className="col">
                         <div className="content">
-                            <Link className="category" to={`/` + category.slug }> { category.name } </Link>
+                            <Link className="category" to={`/category/` + category.slug }> { category.name } </Link>
                             <h3 className="title">
-                                <Link to={'/' + slug}>{ title }</Link>
+                                <Link to={'/blog/' + slug}>{ title }</Link>
                             </h3>
                             <div className="row justify-content-between align-self-stretch">
                                 <div className="col-auto">
@@ -33,7 +37,7 @@ const PostCard = ({ data , className}) => {
                                 </div>
                                 <div className="col-auto">
                                     <span className="date">
-                                        {date}
+                                        {publishDate}
                                     </span>
                                 </div>
                             </div>

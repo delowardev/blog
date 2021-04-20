@@ -63,7 +63,7 @@ const FeaturedCarousel = ({ data }) => {
                                 <div key={key} className="featured-slide">
                                     <div className="featured-slide-inner" style={{ '--feature-bg': node.category.color }}>
                                         <span className="pattern" style={{ backgroundImage: `url('${pattern}')`}} />
-                                        <Link className="category" to={node.category.slug}>
+                                        <Link className="category" to={`/category/` + node.category.slug}>
                                             { node.category.name }
                                         </Link>
                                         <h3 className="title">

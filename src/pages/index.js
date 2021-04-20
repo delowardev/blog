@@ -7,19 +7,19 @@ import Posts from "../components/posts";
 import { get } from "lodash";
 
 const IndexPage = (props) => {
-    console.log(props);
 
-    const posts = get(props, "data.allContentfulBlogPost.edges")
+    const featured = get(props, "data.allContentfulBlogPost.edges")
+    const posts = get(props, "data.allContentfulBlogPost.group")
 
     return (
         <Layout>
             <SEO title="Home" />
-            <FeaturedCarousel data={posts} />
-            <Posts />
-            <div className="spacing is-lg" />
-            <Posts />
-            <div className="spacing is-lg" />
-            <Posts />
+            <FeaturedCarousel data={featured} />
+            {
+                posts.map((p, key) => (
+                    <Posts data={p} key={key} isFirst={key === 0} />
+                ))
+            }
         </Layout>
     )
 }
@@ -28,41 +28,61 @@ export default IndexPage
 
 
 export const pageQuery = graphql`
-  query HomeQuery {
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC } limit:6) {
-      edges {
-        node {
-          title
-          category { 
-            name
-            slug
-            color
-            textColor
-          }
+query HomeQuery {
+  allContentfulBlogPost(sort: {fields: [publishDate], order: DESC}, limit: 6) {
+    edges {
+      node {
+        title
+        category {
+          name
           slug
-          publishDate(formatString: "MMMM Do, YYYY")
-          tags
-          heroImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+          color
+          textColor
+        }
+        slug
+        publishDate(formatString: "MMMM Do, YYYY")
+        tags
+        heroImage {
+          fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            ...GatsbyContentfulFluid_tracedSVG
+          }
+        }
+        description {
+          childMarkdownRemark {
+            html
+          }
+        }
+        author {
+          name
+          image {
+            fluid(maxWidth: 45, maxHeight: 45, resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
-          description {
-            childMarkdownRemark {
-              html
-            }
+        }
+      }
+    }
+    group(field: category___slug, limit:3) {
+      edges {
+        node {
+          category {
+            color
+            textColor
+            id
+            name
+            slug
           }
+          title
+          slug
+          publishDate(formatString: "MMMM Do, YYYY")
+          tags
             author {
               name
-              image {
-                fluid(maxWidth: 45, maxHeight: 45, resizingBehavior: SCALE) {
-                  ...GatsbyContentfulFluid_tracedSVG
-                }
-              }
             }
         }
       }
     }
   }
+}
 `
 
