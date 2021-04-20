@@ -7,6 +7,7 @@ import Title from "./title";
 import { ChevronRight, ChevronLeft } from "react-feather"
 import clsx from "clsx";
 import Img from 'gatsby-image'
+import pattern from "../images/pattern.png";
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <button
@@ -50,22 +51,6 @@ const FeaturedCarousel = ({ data }) => {
         prevArrow: <SlickArrowRight />
     };
 
-    const slide = {
-        category: "Gatsby",
-        title: "Magic Flip Cards Solving A Common Sizing Problem",
-        date: "March 20, 2020",
-        slug: "hello",
-        author: {
-            slug: "delowardev",
-            name: "Delowar Hossain",
-            avatar: "https://i.imgur.com/FZjsVZR.jpeg"
-        }
-    };
-
-    const slides = [
-        ...Array(6).fill(slide)
-    ]
-
     return (
         <div className="featured-section">
             <Title title="Latest posts" to="/" />
@@ -76,9 +61,10 @@ const FeaturedCarousel = ({ data }) => {
                         {
                             data.map(( { node } , key) => (
                                 <div key={key} className="featured-slide">
-                                    <div className="featured-slide-inner">
-                                        <Link className="category" to={node.category[0]}>
-                                            { node.category[0] }
+                                    <div className="featured-slide-inner" style={{ '--feature-bg': node.category.color }}>
+                                        <span className="pattern" style={{ backgroundImage: `url('${pattern}')`}} />
+                                        <Link className="category" to={node.category.slug}>
+                                            { node.category.name }
                                         </Link>
                                         <h3 className="title">
                                             <Link className="text-white block" to={ `/blog/` + node.slug }> { node.title } </Link>

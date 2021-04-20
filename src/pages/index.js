@@ -33,7 +33,12 @@ export const pageQuery = graphql`
       edges {
         node {
           title
-          category
+          category { 
+            name
+            slug
+            color
+            textColor
+          }
           slug
           publishDate(formatString: "MMMM Do, YYYY")
           tags
