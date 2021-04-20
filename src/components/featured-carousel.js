@@ -5,8 +5,37 @@ import "slick-carousel/slick/slick-theme.css";
 import {Link} from "gatsby";
 import Title from "./title";
 import { ChevronRight, ChevronLeft } from "react-feather"
+import clsx from "clsx";
+
+const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+    <button
+        {...props}
+        className={
+            clsx('slick-prev', 'slick-arrow', {'slick-disabled' : currentSlide === 0})
+        }
+        aria-hidden="true"
+        aria-disabled={currentSlide === 0}
+        type="button"
+    >
+        <ChevronLeft />
+    </button>
+);
+const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+    <button
+        {...props}
+        className={
+            clsx('slick-next', 'slick-arrow', {'slick-disabled' : currentSlide === slideCount - 1})
+        }
+        aria-hidden="true"
+        aria-disabled={currentSlide === slideCount - 1}
+        type="button"
+    >
+        <ChevronRight/>
+    </button>
+);
 
 const FeaturedCarousel = () => {
+
     const settings = {
         dots: false,
         infinite: true,
@@ -14,8 +43,8 @@ const FeaturedCarousel = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         className: 'featured-carousel',
-        nextArrow: <button><ChevronRight/></button>,
-        prevArrow: <button><ChevronLeft /></button>
+        nextArrow: <SlickArrowLeft />,
+        prevArrow: <SlickArrowRight />
     };
 
     const slide = {
@@ -42,8 +71,8 @@ const FeaturedCarousel = () => {
                 <div className="featured-slider">
                     <Slider {...settings}>
                         {
-                            slides.map(slide => (
-                                <div className="featured-slide">
+                            slides.map((slide, key) => (
+                                <div key={key} className="featured-slide">
                                     <div className="featured-slide-inner">
                                         <Link className="category" to={slide.category}>
                                             { slide.category }
