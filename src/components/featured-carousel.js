@@ -22,7 +22,7 @@ const FeaturedCarousel = () => {
         category: "Gatsby",
         title: "Magic Flip Cards Solving A Common Sizing Problem",
         date: "March 20, 2020",
-        slug: "/hello",
+        slug: "hello",
         author: {
             slug: "delowardev",
             name: "Delowar Hossain",
