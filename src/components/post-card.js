@@ -14,7 +14,7 @@ const PostCard = ({ data , className}) => {
 
     return (
         <div className={clsx(className, "post-card")}>
-            <div className="post-card-inner">
+            <div className="post-card-inner" style={{ '--post-color' : category.color, '--post-text-color': category.textColor }}>
                 <div className="row no-gutters">
                     <div className="col-4">
                         <div className="thumbnail">

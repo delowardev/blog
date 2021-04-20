@@ -1,10 +1,13 @@
+.post-card {
+  --post-color: #663399;
+  --post-text-color: #ffffff;
+}
+
 .post-card-inner {
   background: white;
   box-shadow: 1px 1px 5px 0 rgb(1 1 1 / 5%);
   border-radius: 10px;
   overflow: hidden;
-  --post-color: #663399;
-  --post-text-color: #ffffff;
   .thumbnail a{
     height: 100%;
     min-height: 10.3rem;
