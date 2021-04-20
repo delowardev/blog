@@ -17,8 +17,15 @@
     display: block;
     color: var(--omega-dark);
   }
-  input {
+  .form-row {
     margin-bottom: 1.2rem;
+  }
+
+  input + div,
+  textarea + div {
+    font-size: .7rem;
+    margin-top: .3rem;
+    color: #EF4444;
   }
 }
 
@@ -39,4 +46,5 @@ input {
 textarea {
   min-height: 120px;
   resize: vertical;
+  padding: .7rem .9rem;
 }

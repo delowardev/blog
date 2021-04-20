@@ -29,4 +29,7 @@
     background: var(--primary);
     color: white;
   }
+  &[disabled] {
+    opacity: .5;
+  }
 }
