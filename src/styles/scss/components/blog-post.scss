@@ -13,6 +13,9 @@
       margin-right: 1rem;
     }
   }
+  .post-left {
+    padding-right: 2rem;
+  }
   .post-body {
     background: white;
     box-shadow: rgb(1 1 1 / 5%) 1px 1px 5px 0;
@@ -28,6 +31,72 @@
     }
     h1, h2, h3, h4, h5, h6 {
       margin-bottom: 1rem;
+    }
+  }
+  .author-box {
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    width: 295px;
+    box-shadow: rgb(1 1 1 / 5%) 1px 1px 5px 0;
+    text-align: center;
+    .avatar {
+      margin: 0 0 2rem;
+      position: relative;
+      z-index: 1;
+      .gatsby-image-wrapper {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+      .pattern {
+        height: 110%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        z-index: -1;
+        opacity: .09;
+        background-size: 60%;
+      }
+    }
+    h4 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    h5 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: var(--omega-dark);
+    }
+    .social {
+      display: flex;
+      justify-content: center;
+      a {
+        height: 46px;
+        width: 46px;
+        border-radius: 50%;
+        background: var(--omega-light);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 .4rem;
+        color: white;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+        &.facebook {
+          background: #3b5999;
+        }
+        &.twitter {
+          background: #55acee;
+        }
+        &.github {
+          background: #24292e;
+        }
+      }
     }
   }
 }
