@@ -47,6 +47,14 @@ export const pageQuery = graphql`
               html
             }
           }
+            author {
+              name
+              image {
+                fluid(maxWidth: 45, maxHeight: 45, resizingBehavior: SCALE) {
+                  ...GatsbyContentfulFluid_tracedSVG
+                }
+              }
+            }
         }
       }
     }

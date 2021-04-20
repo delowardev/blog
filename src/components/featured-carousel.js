@@ -6,6 +6,7 @@ import {Link} from "gatsby";
 import Title from "./title";
 import { ChevronRight, ChevronLeft } from "react-feather"
 import clsx from "clsx";
+import Img from 'gatsby-image'
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <button
@@ -73,27 +74,23 @@ const FeaturedCarousel = ({ data }) => {
                 <div className="featured-slider">
                     <Slider {...settings}>
                         {
-                            slides.map((slide, key) => (
+                            data.map(( { node } , key) => (
                                 <div key={key} className="featured-slide">
                                     <div className="featured-slide-inner">
-                                        <Link className="category" to={slide.category}>
-                                            { slide.category }
+                                        <Link className="category" to={node.category[0]}>
+                                            { node.category[0] }
                                         </Link>
                                         <h3 className="title">
-                                            <Link className="text-white block" to={ slide.slug }> { slide.title } </Link>
+                                            <Link className="text-white block" to={ `/blog/` + node.slug }> { node.title } </Link>
                                         </h3>
 
                                         <div className="row no-gutters author align-items-center">
                                             <div className="col-auto">
-                                                <img
-                                                    className="avatar"
-                                                    src={ slide.author.avatar }
-                                                    alt={ slide.author.name }
-                                                />
+                                                <Img className="avatar" fluid={node.author.image.fluid}/>
                                             </div>
                                             <div className="col">
-                                                <h4> { slide.author.name } </h4>
-                                                <span> { slide.date } </span>
+                                                <h4> { node.author.name } </h4>
+                                                <span> { node.publishDate } </span>
                                             </div>
                                         </div>
                                     </div>
