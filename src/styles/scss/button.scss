@@ -1,0 +1,26 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  padding: 0 2rem;
+  background: var(--omega-light);
+  text-decoration: none;
+  color: var(--omega-dark);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 1rem;
+  &:hover {
+    background: var(--omega-dark);
+    color: var(--omega-light);
+  }
+  &.is-sm {
+    height: 29px;
+    padding: 0 1rem;
+    font-size: .8rem;
+    font-weight: 600;
+  }
+  &.is-rounded {
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,15 @@
+.title-section {
+  .title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    span,
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--primary-heading);
+    }
+    a:hover {
+      color: var(--primary);
+    }
+  }
+}

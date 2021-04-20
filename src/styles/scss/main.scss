@@ -1,35 +1,5 @@
-:root {
-  --primary: #6366F1;
-  --primary-text: #4B5563;
-  --primary-heading: #374151;
-  --omega: #9CA3AF;
-  --omega-dark: #6B7280;
-  --body-bg: #F3F4F6;
-}
-
-body {
-  background: var(--body-bg);
-  color: var(--primary-text);
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  transition: all cubic-bezier(0.4, 0, 0.2, 1) 150ms;
-  display: inline-block;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--primary-heading);
-  line-height: 1.25;
-}
-
-h1 {
-  font-weight: 800;
-  font-size: 2.25rem;
-}
-
-h2 {
-  font-weight: 700;
-}
+@import "global";
+@import "button";
+@import "components/header";
+@import "components/featured-carousel";
+@import "components/title";

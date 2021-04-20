@@ -3,14 +3,19 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {Link} from "gatsby";
+import Title from "./title";
+import { ChevronRight, ChevronLeft } from "react-feather"
 
 const FeaturedCarousel = () => {
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        className: 'featured-carousel',
+        nextArrow: <button><ChevronRight/></button>,
+        prevArrow: <button><ChevronLeft /></button>
     };
 
     const slide = {
@@ -30,37 +35,42 @@ const FeaturedCarousel = () => {
     ]
 
     return (
-        <div className="container">
-            <div className="-mx-2">
-                <Slider {...settings}>
-                    {
-                        slides.map(slide => (
-                            <div className="px-2">
-                                <div className="bg-gray-400 h-80 rounded-2xl px-6 py-8 bg-gradient-to-r from-yellow-400 to-red-500 flex flex-col items-start">
-                                    <Link to={slide.category} className="bg-primary px-2 inline-block text-white rounded-md">
-                                        { slide.category }
-                                    </Link>
-                                    <h2 className="mt-auto text-2xl">
-                                        <Link className="text-white block" to={ slide.slug }> { slide.title } </Link>
-                                    </h2>
-                                    <div className="pt-4 flex items-center">
-                                        <div className="pr-3">
-                                            <img
-                                                className="w-14 h-14 rounded-full"
-                                                src={ slide.author.avatar }
-                                                alt={ slide.author.name }
-                                            />
-                                        </div>
-                                        <div>
-                                            <h4> { slide.author.name } </h4>
-                                            <span> { slide.date } </span>
+        <div className="featured-section">
+            <Title title="Latest posts" to="/" />
+            <div className="spacing" />
+            <div className="container">
+                <div className="featured-slider">
+                    <Slider {...settings}>
+                        {
+                            slides.map(slide => (
+                                <div className="featured-slide">
+                                    <div className="featured-slide-inner">
+                                        <Link className="category" to={slide.category}>
+                                            { slide.category }
+                                        </Link>
+                                        <h3 className="title">
+                                            <Link className="text-white block" to={ slide.slug }> { slide.title } </Link>
+                                        </h3>
+
+                                        <div className="row no-gutters author align-items-center">
+                                            <div className="col-auto">
+                                                <img
+                                                    className="avatar"
+                                                    src={ slide.author.avatar }
+                                                    alt={ slide.author.name }
+                                                />
+                                            </div>
+                                            <div className="col">
+                                                <h4> { slide.author.name } </h4>
+                                                <span> { slide.date } </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))
-                    }
-                </Slider>
+                            ))
+                        }
+                    </Slider>
+                </div>
             </div>
         </div>
     )

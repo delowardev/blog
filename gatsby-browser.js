@@ -6,6 +6,7 @@
 
 // You can delete this file if you're not using it
 
+import "normalize.css/normalize.css"
 import "bootstrap/dist/css/bootstrap-grid.min.css"
 import "@fontsource/inter"
 import "@fontsource/inter/500.css"
