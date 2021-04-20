@@ -10,6 +10,8 @@
   border-radius: 4px;
   font-weight: 500;
   font-size: 1rem;
+  border: none;
+  cursor: pointer;
   &:hover {
     background: var(--omega-dark);
     color: var(--omega-light);
@@ -22,5 +24,9 @@
   }
   &.is-rounded {
     border-radius: 10px;
+  }
+  &.is-primary {
+    background: var(--primary);
+    color: white;
   }
 }
