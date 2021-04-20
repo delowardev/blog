@@ -10,6 +10,10 @@ const IndexPage = () => (
     <SEO title="Home" />
     <FeaturedCarousel/>
     <Posts />
+    <div className="spacing is-lg" />
+    <Posts />
+    <div className="spacing is-lg" />
+    <Posts />
   </Layout>
 )
 

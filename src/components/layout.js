@@ -26,12 +26,12 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div>
         <main>{children}</main>
-        <footer className="py-2">
-         <div className="container">
-             © {new Date().getFullYear()}, Built with
-             {` `}
-             <a href="https://www.gatsbyjs.com">Gatsby</a>
-         </div>
+        <footer className="footer">
+             <div className="container">
+                 © {new Date().getFullYear()} @delowar.dev, Built with
+                 {` `}
+                 <a href="https://www.gatsbyjs.com">Gatsby</a>
+             </div>
         </footer>
       </div>
     </>
