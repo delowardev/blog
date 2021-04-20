@@ -1,5 +1,5 @@
 .header-inner {
-  margin: 0 -1rem;
+  margin: 0 -.7rem 0 -1rem;
 }
 
 .header {
@@ -14,10 +14,10 @@
   }
   nav {
     a {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       text-decoration: none;
       font-weight: 600;
-      padding: 1rem;
+      padding: 1rem .7rem;
       color: var(--omega);
       &:hover,
       &.is-active {

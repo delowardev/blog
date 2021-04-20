@@ -38,6 +38,11 @@ query HomeQuery {
           slug
           color
           textColor
+            image {
+                fluid(maxWidth: 45, maxHeight: 45, resizingBehavior: SCALE) {
+                  ...GatsbyContentfulFluid_tracedSVG
+                }
+            }
         }
         slug
         publishDate(formatString: "MMMM Do, YYYY")
@@ -54,11 +59,11 @@ query HomeQuery {
         }
         author {
           name
-          image {
-            fluid(maxWidth: 45, maxHeight: 45, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
+            image {
+                file {
+                    url
+                }
             }
-          }
         }
       }
     }
@@ -71,6 +76,11 @@ query HomeQuery {
             id
             name
             slug
+            image {
+                file {
+                    url
+                }
+            }
           }
           title
           slug

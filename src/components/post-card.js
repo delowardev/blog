@@ -2,15 +2,10 @@ import * as React from "react";
 import clsx from "clsx";
 import { Link } from "gatsby";
 import pattern from "../images/pattern.png";
-import GatsbyIcon from "../images/gatsby.svg";
 
 const PostCard = ({ data , className}) => {
 
     const { slug, category, title, publishDate, author } = data;
-
-    console.log(data);
-
-    // return null;
 
     return (
         <div className={clsx(className, "post-card")}>
@@ -20,7 +15,7 @@ const PostCard = ({ data , className}) => {
                         <div className="thumbnail">
                             <Link to={`/blog/` + slug}>
                                 <span className="pattern" style={{ backgroundImage: `url('${pattern}')`}} />
-                                <img className="icon" src={GatsbyIcon} alt="gatsby"/>
+                                <img className="icon" src={category.image.file.url} align={category.name} />
                                 { category.name }
                             </Link>
                         </div>
