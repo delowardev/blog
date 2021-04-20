@@ -1,0 +1,17 @@
+.error-404 {
+  min-height: calc(100vh - 188px - 3rem);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
+}
