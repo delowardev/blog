@@ -13,28 +13,39 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
-          <Helmet title={`${post.title} | ${siteTitle}`} />
-          <div >
-            <Img
-              alt={post.title}
-              fluid={post.heroImage.fluid}
-            />
-          </div>
-          <div className="wrapper">
-            <h1 className="section-headline">{post.title}</h1>
-            <p
-              style={{
-                display: 'block',
-              }}
-            >
-              {post.publishDate}
-            </p>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: post.body.childMarkdownRemark.html,
-              }}
-            />
+        <Helmet title={`${post.title} | ${siteTitle}`} />
+
+        <div className="single-post-section">
+        <div className="spacing is-lg" />
+          <div className="container">
+              <div className="post">
+                  <h1 className="title">{post.title}</h1>
+                  <div className="post-meta">
+                      <span>By<strong>{post.author.name}</strong></span>
+                      <span>Published in <strong>{post.category.name}</strong></span>
+                      <span>{post.publishDate}</span>
+                  </div>
+                  <div className="spacing is-lg" />
+                  <div className="row">
+                      <div className="col-8">
+                          <div className="post-body">
+                              <div className="thumbnail">
+                                  <Img
+                                      alt={post.title}
+                                      fluid={post.heroImage.fluid}
+                                  />
+                              </div>
+                              <div
+                                  className="content"
+                                  dangerouslySetInnerHTML={{
+                                      __html: post.body.childMarkdownRemark.html,
+                                  }}
+                              />
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
           </div>
         </div>
       </Layout>
@@ -49,6 +60,12 @@ export const pageQuery = graphql`
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       publishDate(formatString: "MMMM Do, YYYY")
+      category {
+        name
+      }
+      author {
+        name
+      }
       heroImage {
         fluid(maxWidth: 1180, background: "rgb:000000") {
           ...GatsbyContentfulFluid_tracedSVG

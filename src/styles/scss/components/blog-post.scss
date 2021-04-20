@@ -1,0 +1,33 @@
+.post {
+  .title {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.33;
+    margin: 0 0 1rem;
+  }
+  .post-meta {
+    display: flex;
+    span{
+      display: inline-block;
+      color: var(--omega-dark);
+      margin-right: 1rem;
+    }
+  }
+  .post-body {
+    background: white;
+    box-shadow: rgb(1 1 1 / 5%) 1px 1px 5px 0;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    border-radius: 1rem 1rem .3rem .3rem;
+    overflow: hidden;
+    .content {
+      padding: 2.5rem 2rem;
+    }
+    p {
+      margin-bottom: 2rem;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 1rem;
+    }
+  }
+}
