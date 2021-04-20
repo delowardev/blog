@@ -15,7 +15,7 @@ const PostCard = ({ data , className}) => {
                         <div className="thumbnail">
                             <Link to={`/blog/` + slug}>
                                 <span className="pattern" style={{ backgroundImage: `url('${pattern}')`}} />
-                                <img className="icon" src={category.image.file.url} align={category.name} />
+                                <img className="icon" src={category.image.file.url} alt={category.name} />
                                 { category.name }
                             </Link>
                         </div>
