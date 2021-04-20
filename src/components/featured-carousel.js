@@ -34,7 +34,9 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
     </button>
 );
 
-const FeaturedCarousel = () => {
+const FeaturedCarousel = ({ data }) => {
+
+    console.log(data)
 
     const settings = {
         dots: false,

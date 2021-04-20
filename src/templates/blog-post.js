@@ -30,11 +30,11 @@ class BlogPostTemplate extends React.Component {
             >
               {post.publishDate}
             </p>
-            {/*<div*/}
-            {/*  dangerouslySetInnerHTML={{*/}
-            {/*    __html: post.body.childMarkdownRemark.html,*/}
-            {/*  }}*/}
-            {/*/>*/}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: post.body.childMarkdownRemark.html,
+              }}
+            />
           </div>
         </div>
       </Layout>
@@ -54,13 +54,13 @@ export const pageQuery = graphql`
           ...GatsbyContentfulFluid_tracedSVG
         }
       }
+      body {
+        childMarkdownRemark {
+          html
+        }
+      }
     }
   }
 `
 
 
-// body {
-//   childMarkdownRemark {
-//     html
-//   }
-// }
