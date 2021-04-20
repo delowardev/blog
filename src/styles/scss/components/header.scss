@@ -1,19 +1,23 @@
+.header-inner {
+  margin: 0 -1rem;
+}
+
 .header {
   background: white;
   padding: 1rem 0;
   .branding {
     font-size: 1.5rem;
     text-decoration: none;
-    font-weight: 500;
-    padding: 1rem 1.5rem;
-    color: var(--primary);
+    font-weight: 700;
+    padding: 1rem;
+    color: var(--primary-heading);
   }
   nav {
     a {
       font-size: 1.2rem;
       text-decoration: none;
       font-weight: 600;
-      padding: 1rem 1.5rem;
+      padding: 1rem;
       color: var(--omega);
       &:hover,
       &.is-active {
