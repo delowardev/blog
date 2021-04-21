@@ -15,6 +15,10 @@
   }
   .post-left {
     padding-right: 2rem;
+    @media only screen and (max-width: 991.98px) {
+      padding-right: 0;
+      padding-bottom: 4rem;
+    }
   }
   .post-body {
     background: white;

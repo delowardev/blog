@@ -29,7 +29,7 @@ class BlogPostTemplate extends React.Component {
                   </div>
                   <div className="spacing is-lg" />
                   <div className="row ">
-                      <div className="col">
+                      <div className="col-12 col-lg">
                           <div className="post-left">
                               <div className="post-body">
                                   <div className="thumbnail">

@@ -17,7 +17,7 @@ const BlogPage = (props) => {
 
             <div className="container">
                 <div className="row">
-                    <div className="col-8">
+                    <div className="col-md-8">
                         <div className="page-header">
                             <h1>Latest posts</h1>
                             <p>Were they a kind of writing, an expository method of display and measurement or a mutable material.</p>
@@ -33,7 +33,7 @@ const BlogPage = (props) => {
                     <div className="row">
                         {
                             posts?.map((p, k) => (
-                                <PostCard className="col-6 post-item" key={k} data={p.node} />
+                                <PostCard className="col-md-6 post-item" key={k} data={p.node} />
                             ))
                         }
                     </div>

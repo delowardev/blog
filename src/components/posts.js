@@ -19,7 +19,7 @@ const Posts = ({ data, isFirst }) => {
                     <div className="row no-gutters">
                         {
                             posts?.map((post, k) => (
-                                <PostCard className="col-6 post-item" key={k} data={post} />
+                                <PostCard className="col-md-6 post-item" key={k} data={post} />
                             ))
                         }
                     </div>

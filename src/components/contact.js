@@ -60,7 +60,7 @@ const Contact = () => {
             <ToastContainer />
             <div className="container">
                 <div className="row justify-content-center">
-                    <div className="col-8">
+                    <div className="col-md-10 col-lg-8">
                         <div className="contact-header">
                             <h1>Let's connect</h1>
                             <p>Whether you have an idea for a project or just want to chat, feel free to shoot me an email!</p>
@@ -69,7 +69,7 @@ const Contact = () => {
                         <div className="contact-form">
                             <form onSubmit={submit} action="#">
                                 <div className="row form-row">
-                                    <div className="col-6">
+                                    <div className="col-md-6">
                                         <label htmlFor="name">Name *</label>
                                         <input
                                             value={name}
@@ -88,7 +88,7 @@ const Contact = () => {
                                             errors={state.errors}
                                         />
                                     </div>
-                                    <div className="col-6">
+                                    <div className="col-md-6">
                                         <label htmlFor="company">Company</label>
                                         <input
                                             value={company}
@@ -108,7 +108,7 @@ const Contact = () => {
                                     </div>
                                 </div>
                                 <div className="row form-row">
-                                    <div className="col-6">
+                                    <div className="col-md-6">
                                         <label htmlFor="email">Email *</label>
                                         <input
                                             value={email}
@@ -128,7 +128,7 @@ const Contact = () => {
                                             errors={state.errors}
                                         />
                                     </div>
-                                    <div className="col-6">
+                                    <div className="col-md-6">
                                         <label htmlFor="phone">Phone Number</label>
                                         <input
                                             value={phone}
