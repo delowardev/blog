@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
 import Layout from '../components/layout'
 import PostCard from "../components/post-card";
+import Pagination from "../components/pagination";
 
 
 class BlogPostTemplate extends React.Component {
@@ -42,6 +43,9 @@ class BlogPostTemplate extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                <Pagination pageContext={this.props.pageContext} />
+
             </Layout>
         )
     }
@@ -50,8 +54,8 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostByCat($slug: String!) {
-      allContentfulBlogPost(filter: {category: {slug: {eq: $slug}}}) {
+  query BlogPostByCat($slug: String!, $skip: Int!, $limit: Int!) {
+      allContentfulBlogPost(filter: {category: {slug: {eq: $slug}}}, limit: $limit, skip: $skip) {
         edges {
           node {
             title
@@ -88,15 +92,6 @@ export const pageQuery = graphql`
                 }
             }
           }
-        }
-        pageInfo {
-          currentPage
-          hasNextPage
-          hasPreviousPage
-          itemCount
-          pageCount
-          perPage
-          totalCount
         }
       }
   }

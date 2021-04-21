@@ -94,15 +94,6 @@ query BlogIndexQuery($skip: Int!, $limit: Int!) {
         }
       }
     }
-    pageInfo {
-      currentPage
-      hasNextPage
-      hasPreviousPage
-      itemCount
-      pageCount
-      perPage
-      totalCount
-    }
   }
 }
 

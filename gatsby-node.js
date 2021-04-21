@@ -27,6 +27,10 @@ exports.createPages = ({ graphql, actions }) => {
                   node {
                     slug
                     name
+                    blog_post {
+                      slug
+                      title
+                    }
                   }
                 }
             }
@@ -59,8 +63,14 @@ exports.createPages = ({ graphql, actions }) => {
                 })
 
                 result.data.allContentfulCategory.edges.forEach(cat => {
-                    createPage({
-                        path: `/category/${cat.node.slug}/`,
+
+                    if (!cat.node.blog_post) return;
+
+                    paginate({
+                        createPage,
+                        items: cat.node.blog_post,
+                        itemsPerPage: 8,
+                        pathPrefix: `/category/${cat.node.slug}`,
                         component: category,
                         context: {
                             slug: cat.node.slug,
