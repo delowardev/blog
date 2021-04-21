@@ -43,7 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
                 paginate({
                     createPage,
                     items: posts,
-                    itemsPerPage: 2,
+                    itemsPerPage: 8,
                     pathPrefix: '/blog',
                     component: blogPage
                 })

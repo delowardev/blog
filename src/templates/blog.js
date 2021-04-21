@@ -43,8 +43,6 @@ const BlogPage = (props) => {
 
             <Pagination pageContext={props.pageContext} />
 
-            <div className="spacing is-lg"/>
-
         </Layout>
     )
 }

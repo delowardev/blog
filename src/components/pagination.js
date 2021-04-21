@@ -6,6 +6,10 @@ const Pagination = ({ pageContext }) => {
 
     const {humanPageNumber, numberOfPages, previousPagePath, nextPagePath} = pageContext;
 
+    if (numberOfPages === 1) {
+        return null;
+    }
+
 
     return (
         <div className="pagination-section">
