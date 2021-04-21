@@ -23,6 +23,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <div className="notice">Notice: This site is under construction, all contents are fake</div>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div>
         <main>{children}</main>
