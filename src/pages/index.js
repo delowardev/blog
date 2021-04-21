@@ -5,7 +5,6 @@ import SEO from "../components/seo"
 import FeaturedCarousel from "../components/featured-carousel";
 import Posts from "../components/posts";
 import { get } from "lodash";
-import {useState} from "react";
 
 const IndexPage = (props) => {
 
