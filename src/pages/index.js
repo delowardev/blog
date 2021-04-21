@@ -60,9 +60,9 @@ query HomeQuery {
         author {
           name
             image {
-                file {
-                    url
-                }
+              fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+                ...GatsbyContentfulFluid_tracedSVG
+              }
             }
         }
       }
