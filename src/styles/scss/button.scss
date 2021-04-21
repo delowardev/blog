@@ -25,11 +25,31 @@
   &.is-rounded {
     border-radius: 10px;
   }
+  &.is-round {
+    border-radius: 10rem;
+  }
   &.is-primary {
     background: var(--primary);
     color: white;
   }
   &[disabled] {
     opacity: .5;
+  }
+  .icon {
+    svg {
+      display: block;
+    }
+  }
+  &.icon-left {
+    padding-left: 1.5rem;
+    .icon {
+      margin-right: .5rem;
+    }
+  }
+  &.icon-right {
+    padding-right: 1.5rem;
+    .icon {
+      margin-left: .5rem;
+    }
   }
 }

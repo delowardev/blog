@@ -10,6 +10,7 @@
     "bootstrap": "^4.6.0",
     "clsx": "^1.1.1",
     "gatsby": "^3.2.1",
+    "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-image": "^3.3.0",
     "gatsby-plugin-gatsby-cloud": "^2.2.0",
     "gatsby-plugin-image": "^1.2.1",

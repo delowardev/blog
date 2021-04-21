@@ -12,8 +12,6 @@ class BlogPostTemplate extends React.Component {
 
         const title = get(posts[0], "node.category.name")
 
-        console.log(posts)
-
         return (
             <Layout location={this.props.location}>
                 <Helmet title={`${title}`} />

@@ -1,0 +1,16 @@
+.pagination {
+  background: white;
+  display: inline-flex;
+  padding: .2rem;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10rem;
+  margin-top: 4rem;
+  .page-info {
+    display: inline;
+    margin: 0 4rem;
+    font-size: 1.2rem;
+    color: var(--omega);
+    font-weight: 600;
+  }
+}

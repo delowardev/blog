@@ -1,5 +1,6 @@
 const Promise = require('bluebird')
 const path = require('path')
+const { paginate } = require('gatsby-awesome-pagination')
 
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions
@@ -7,6 +8,8 @@ exports.createPages = ({ graphql, actions }) => {
     return new Promise((resolve, reject) => {
         const blogPost = path.resolve('./src/templates/blog-post.js')
         const category = path.resolve('./src/templates/category.js')
+        const blogPage = path.resolve('./src/templates/blog.js')
+
         resolve(
             graphql(
                 `
@@ -35,7 +38,17 @@ exports.createPages = ({ graphql, actions }) => {
                     reject(result.errors)
                 }
 
-                result.data.allContentfulBlogPost.edges.forEach(post => {
+                const posts = result.data.allContentfulBlogPost.edges;
+
+                paginate({
+                    createPage,
+                    items: posts,
+                    itemsPerPage: 2,
+                    pathPrefix: '/blog',
+                    component: blogPage
+                })
+
+                posts.forEach(post => {
                     createPage({
                         path: `/blog/${post.node.slug}/`,
                         component: blogPost,
