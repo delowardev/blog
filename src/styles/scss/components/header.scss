@@ -1,10 +1,16 @@
 .header-inner {
   margin: 0 -.7rem 0 -1rem;
+  @media screen and (max-width: 575.98px) {
+    margin: 0;
+  }
 }
 
 .header {
   background: white;
   padding: 1rem 0;
+  @media screen and (max-width: 575.98px) {
+    padding: .5rem;
+  }
   .branding {
     font-size: 1.2rem;
     text-decoration: none;
@@ -12,6 +18,19 @@
     padding: 1rem;
     color: var(--primary-heading);
   }
+
+
+  @media screen and (max-width: 575.98px) {
+    .branding-col {
+      text-align: center;
+      .branding {
+        padding: 1rem 1rem .5rem;
+      }
+    }
+  }
+
+
+
   nav {
     a {
       font-size: 1.1rem;
@@ -23,6 +42,10 @@
       &.is-active {
         color: var(--primary);
       }
+    }
+
+    @media screen and (max-width: 575.98px) {
+      text-align: center;
     }
   }
 }

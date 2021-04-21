@@ -24,12 +24,12 @@ const Header = ({ siteTitle }) => {
             <div className="container">
                 <div className="header-inner">
                     <div className="row justify-content-between align-items-center">
-                        <div className="col-auto">
+                        <div className="col-12 col-sm-auto branding-col">
                             <Link className='branding' to='/'>
                                 {siteTitle}
                             </Link>
                         </div>
-                        <div className="col-auto">
+                        <div className="col-12 col-sm-auto nav-col">
                             <nav>
                                 {
                                     nav.map((n, k) => (
