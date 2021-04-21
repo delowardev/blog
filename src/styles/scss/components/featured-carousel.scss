@@ -25,6 +25,23 @@
       margin-left: 0;
       margin-right: 5px;
     }
+
+    @media screen and (max-width: 575.98px) {
+      &.slick-next,
+      &.slick-prev {
+        left: 2rem;
+        height: 2rem;
+        width: 2rem;
+        font-size: 1.5rem;
+        opacity: .5;
+        top: 40%;
+      }
+      &.slick-next {
+        left: auto;
+        right: 2rem;
+      }
+    }
+
     &:focus {
       background: var(--omega-light);
       color: var(--omega-dark);
