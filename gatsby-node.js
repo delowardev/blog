@@ -6,6 +6,7 @@ exports.createPages = ({ graphql, actions }) => {
 
     return new Promise((resolve, reject) => {
         const blogPost = path.resolve('./src/templates/blog-post.js')
+        const category = path.resolve('./src/templates/category.js')
         resolve(
             graphql(
                 `
@@ -18,6 +19,14 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
+            allContentfulCategory {
+                edges {
+                  node {
+                    slug
+                    name
+                  }
+                }
+            }
           }
         `
             ).then(result => {
@@ -26,8 +35,7 @@ exports.createPages = ({ graphql, actions }) => {
                     reject(result.errors)
                 }
 
-                const posts = result.data.allContentfulBlogPost.edges
-                posts.forEach(post => {
+                result.data.allContentfulBlogPost.edges.forEach(post => {
                     createPage({
                         path: `/blog/${post.node.slug}/`,
                         component: blogPost,
@@ -36,48 +44,17 @@ exports.createPages = ({ graphql, actions }) => {
                         },
                     })
                 })
-            })
-        )
-    })
-}
 
-
-
-exports.createPages = ({ graphql, actions }) => {
-    const { createPage } = actions
-
-    return new Promise((resolve, reject) => {
-        const blogPost = path.resolve('./src/templates/category.js')
-        resolve(
-            graphql(
-                `
-          {
-              allContentfulCategory {
-                edges {
-                  node {
-                    slug
-                    name
-                  }
-                }
-              }
-          }
-        `
-            ).then(result => {
-                if (result.errors) {
-                    console.log(result.errors)
-                    reject(result.errors)
-                }
-
-                const posts = result.data.allContentfulCategory.edges
-                posts.forEach(category => {
+                result.data.allContentfulCategory.edges.forEach(cat => {
                     createPage({
-                        path: `/category/${category.node.slug}/`,
-                        component: blogPost,
+                        path: `/category/${cat.node.slug}/`,
+                        component: category,
                         context: {
-                            slug: category.node.slug,
+                            slug: cat.node.slug,
                         },
                     })
                 })
+
             })
         )
     })
