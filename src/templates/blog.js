@@ -12,7 +12,7 @@ const BlogPage = (props) => {
 
     return (
         <Layout>
-            <SEO title="Let's connect" />
+            <SEO title="Latest posts" />
             <div className="spacing is-lg"/>
 
             <div className="container">
