@@ -19,7 +19,7 @@ const IndexPage = (props) => {
             <FeaturedCarousel data={featured} />
             {
                 categories.map((p, key) => {
-                    if (p.node.blog_post) {
+                    if (p.node.blog_post && i < 5) {
                         i++;
                         return <Posts data={p} key={key} isFirst={i === 1} />
                     }
@@ -32,7 +32,7 @@ const IndexPage = (props) => {
 
 export default IndexPage
 
-
+// @TODO: filter category items properly
 export const pageQuery = graphql`
 query HomeQuery {
   allContentfulBlogPost(sort: {fields: [publishDate], order: DESC}, limit: 16) {
