@@ -53,7 +53,7 @@ const FeaturedCarousel = ({ data }) => {
 
     return (
         <div className="featured-section">
-            <Title title="Latest posts" to="/" />
+            <Title title="Latest posts" to="/blog" />
             <div className="spacing" />
             <div className="container">
                 <div className="featured-slider">

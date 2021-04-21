@@ -6,8 +6,12 @@ const Header = ({ siteTitle }) => {
 
     const nav = [
         {
-            name: "Blog",
+            name: "Home",
             to: "/"
+        },
+        {
+            name: "Blog",
+            to: "/blog"
         },
         {
             name: "Contact",
