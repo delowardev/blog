@@ -9,16 +9,22 @@ import { get } from "lodash";
 const IndexPage = (props) => {
 
     const featured = get(props, "data.allContentfulBlogPost.edges")
-    const posts = get(props, "data.allContentfulBlogPost.group")
+    const categories = get(props, "data.allContentfulCategory.edges")
+
+    let i = 0;
 
     return (
         <Layout>
             <SEO title="Home" />
             <FeaturedCarousel data={featured} />
             {
-                posts.map((p, key) => (
-                    <Posts data={p} key={key} isFirst={key === 0} />
-                ))
+                categories.map((p, key) => {
+                    if (p.node.blog_post) {
+                        i++;
+                        return <Posts data={p} key={key} isFirst={i === 1} />
+                    }
+                    return null;
+                })
             }
         </Layout>
     )
@@ -67,27 +73,45 @@ query HomeQuery {
         }
       }
     }
-    group(field: category___slug, limit:3) {
-      edges {
-        node {
-          category {
-            color
-            textColor
-            id
-            name
-            slug
-            image {
-                file {
-                    url
+  }
+  allContentfulCategory(limit: 10) {
+    edges {
+      node {
+        slug
+        name
+        blog_post {
+          title
+            category {
+              name
+              slug
+              color
+              textColor
+                image {
+                    file {
+                        url
+                    }
                 }
             }
-          }
-          title
-          slug
-          publishDate(formatString: "MMMM Do, YYYY")
-          tags
+            slug
+            publishDate(formatString: "MMMM Do, YYYY")
+            tags
+            heroImage {
+              fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+                ...GatsbyContentfulFluid_tracedSVG
+              }
+            }
+            description {
+              childMarkdownRemark {
+                html
+              }
+            }
             author {
               name
+                image {
+                  fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+                    ...GatsbyContentfulFluid_tracedSVG
+                  }
+                }
             }
         }
       }

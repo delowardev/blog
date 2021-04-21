@@ -4,10 +4,8 @@ import PostCard from "./post-card";
 import { get } from "lodash";
 
 const Posts = ({ data, isFirst }) => {
-
-    const blogPosts = get(data, "edges")
-    if (!blogPosts.length) return null;
-    const category = get(blogPosts[0], "node.category")
+    const category = get(data, "node");
+    const posts = get(data, "node.blog_post")
 
     return (
         <div className="posts-section">
@@ -20,8 +18,8 @@ const Posts = ({ data, isFirst }) => {
                 <div className="posts">
                     <div className="row no-gutters">
                         {
-                            blogPosts?.map((p, k) => (
-                                <PostCard className="col-6 post-item" key={k} data={p.node} />
+                            posts?.map((post, k) => (
+                                <PostCard className="col-6 post-item" key={k} data={post} />
                             ))
                         }
                     </div>
