@@ -67,6 +67,16 @@
       background: linear-gradient( 0deg, #2d3748 0%, transparent 100% );
       z-index: -1;
     }
+    .icon {
+      position: absolute;
+      height: 80%;
+      width: auto;
+      z-index: -2;
+      right: -10px;
+      opacity: .3;
+      top: 50%;
+      transform: translateY(-50%);
+    }
     .pattern {
       position: absolute;
       top: 0;

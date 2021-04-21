@@ -49,6 +49,8 @@ const FeaturedCarousel = ({ data }) => {
         prevArrow: <SlickArrowRight />
     };
 
+    console.log(data);
+
     return (
         <div className="featured-section">
             <Title title="Latest posts" to="/blog" />
@@ -60,6 +62,7 @@ const FeaturedCarousel = ({ data }) => {
                             data.map(( { node } , key) => (
                                 <div key={key} className="featured-slide">
                                     <div className="featured-slide-inner" style={{ '--feature-bg': node.category.color }}>
+                                        <img className="icon" src={node.category.image.file.url} alt={node.category.name}/>
                                         <span className="pattern" style={{ backgroundImage: `url('${pattern}')`}} />
                                         <Link className="category" to={`/category/` + node.category.slug}>
                                             { node.category.name }

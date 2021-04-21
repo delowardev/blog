@@ -35,7 +35,7 @@ export default IndexPage
 // @TODO: filter category items properly
 export const pageQuery = graphql`
 query HomeQuery {
-  allContentfulBlogPost(sort: {fields: [publishDate], order: DESC}, limit: 16) {
+  allContentfulBlogPost(sort: {fields: [publishDate], order: DESC}, limit: 6) {
     edges {
       node {
         title
@@ -66,7 +66,7 @@ query HomeQuery {
         author {
           name
             image {
-              fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+              fluid(maxWidth: 45, maxHeight: 45, resizingBehavior: SCALE) {
                 ...GatsbyContentfulFluid_tracedSVG
               }
             }
