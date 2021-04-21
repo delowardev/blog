@@ -5,13 +5,12 @@ import SEO from "../components/seo"
 import FeaturedCarousel from "../components/featured-carousel";
 import Posts from "../components/posts";
 import { get } from "lodash";
+import {useState} from "react";
 
 const IndexPage = (props) => {
 
     const featured = get(props, "data.allContentfulBlogPost.edges")
     const categories = get(props, "data.allContentfulCategory.edges")
-
-    let i = 0;
 
     return (
         <Layout>
@@ -19,9 +18,8 @@ const IndexPage = (props) => {
             <FeaturedCarousel data={featured} />
             {
                 categories.map((p, key) => {
-                    if (p.node.blog_post && i < 5) {
-                        i++;
-                        return <Posts data={p} key={key} isFirst={i === 1} />
+                    if (p.node.blog_post) {
+                        return <Posts data={p} key={key} max={4} />
                     }
                     return null;
                 })

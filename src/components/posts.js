@@ -3,7 +3,7 @@ import Title from "./title";
 import PostCard from "./post-card";
 import { get } from "lodash";
 
-const Posts = ({ data, isFirst }) => {
+const Posts = ({ data, isFirst, max = 99 }) => {
     const category = get(data, "node");
     const posts = get(data, "node.blog_post")
 
@@ -18,7 +18,7 @@ const Posts = ({ data, isFirst }) => {
                 <div className="posts">
                     <div className="row no-gutters">
                         {
-                            posts?.map((post, k) => (
+                            posts?.map((post, k) => k >= max ? null : (
                                 <PostCard className="col-md-6 post-item" key={k} data={post} />
                             ))
                         }
