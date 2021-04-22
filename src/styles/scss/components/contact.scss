@@ -19,7 +19,7 @@
   }
   .form-row {
     margin-bottom: 1.2rem;
-    @media only screen and (max-width: 767.98px) {
+    @include breakpoint('sm') {
       .col-md-6:nth-child(2) {
         margin-top: 1.2rem;
       }

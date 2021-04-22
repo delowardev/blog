@@ -1,6 +1,6 @@
 .header-inner {
   margin: 0 -.7rem 0 -1rem;
-  @media screen and (max-width: 575.98px) {
+  @include breakpoint('xs') {
     margin: 0;
   }
 }
@@ -8,7 +8,7 @@
 .header {
   background: white;
   padding: 1rem 0;
-  @media screen and (max-width: 575.98px) {
+  @include breakpoint('xs') {
     padding: .5rem;
   }
   .branding {
@@ -20,7 +20,7 @@
   }
 
 
-  @media screen and (max-width: 575.98px) {
+  @include breakpoint('xs') {
     .branding-col {
       text-align: center;
       .branding {
@@ -44,7 +44,7 @@
       }
     }
 
-    @media screen and (max-width: 575.98px) {
+    @include breakpoint('xs') {
       text-align: center;
     }
   }

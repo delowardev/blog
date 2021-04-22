@@ -26,19 +26,23 @@
       margin-right: 5px;
     }
 
-    @media screen and (max-width: 575.98px) {
+    @include breakpoint('xs') {
       &.slick-next,
       &.slick-prev {
-        left: 2rem;
+        left: 50%;
         height: 2rem;
         width: 2rem;
         font-size: 1.5rem;
-        opacity: .5;
-        top: 40%;
+        top: 100%;
+        transform: translateX(-100%) translateY(10px);
+        margin-left: -10px;
       }
       &.slick-next {
         left: auto;
-        right: 2rem;
+        right: 50%;
+        transform: translateX(100%) translateY(10px);
+        margin-left: 0;
+        margin-right: -10px;
       }
     }
 
