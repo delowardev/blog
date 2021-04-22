@@ -6,12 +6,14 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import { Facebook, Twitter, GitHub } from "react-feather"
 import pattern from "../images/pattern.png";
+import RelatedPosts from "../components/related-posts";
 
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlogPost')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const relatedPosts = get(post, "category.blog_post");
 
     return (
       <Layout location={this.props.location}>
@@ -48,7 +50,7 @@ class BlogPostTemplate extends React.Component {
                           </div>
                       </div>
                       <div className="col-auto">
-                          <div className="author-box">
+                          <div className="author-box sidebar-widget">
                               <div className="avatar">
                                   <span className="pattern" style={{ backgroundImage: `url('${pattern}')`}} />
                                   <Img
@@ -70,6 +72,7 @@ class BlogPostTemplate extends React.Component {
                                   </Link>
                               </div>
                           </div>
+                          <RelatedPosts data={relatedPosts} />
                       </div>
                   </div>
 
@@ -90,6 +93,14 @@ export const pageQuery = graphql`
       publishDate(formatString: "MMMM Do, YYYY")
       category {
         name
+        blog_post {
+          slug
+          title
+          publishDate(formatString: "MMMM Do, YYYY")
+          author {
+            name
+          }
+        }
       }
         author {
           name

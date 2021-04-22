@@ -1,0 +1,59 @@
+.sidebar-widget {
+  &:not(:first-child) {
+    margin-top: 3rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+    color: var(--omega-dark);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+}
+
+.post-card-mini {
+  box-shadow: 1px 1px 5px 0 rgb(1 1 1 / 5%);
+  background: white;
+  margin-bottom: 1rem;
+  padding: 1rem 1rem 1rem 1.5rem;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: 400ms;
+
+  &:hover {
+    box-shadow: 0 2px 4px rgb(46 41 51 / 8%), 0 5px 10px rgb(71 63 79 / 16%);
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 5px;
+    background: var(--primary);
+    left: 0;
+    top: 0;
+    opacity: .5;
+  }
+
+  h4 {
+    a {
+      color: var(--primary-heading);
+      font-size: 1rem;
+      text-decoration: none;
+      line-height: 1.4;
+    }
+    margin-bottom: .8rem;
+  }
+
+  .author {
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--omega-dark);
+  }
+
+  .date {
+    font-size: .8rem;
+    color: var(--omega);
+  }
+
+}
