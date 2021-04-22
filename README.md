@@ -8,7 +8,7 @@
   @delowardev
 </h1>
 
-Live demo: [https://alpha-blog.delowar.dev/](https://alpha-blog.delowar.dev/)
+Live demo: [https://v2-alpha.delowar.dev/](https://v2-alpha.delowar.dev/)
 
 1.  **Start developing.**
 
