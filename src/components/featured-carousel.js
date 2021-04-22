@@ -45,8 +45,8 @@ const FeaturedCarousel = ({ data }) => {
         slidesToShow: 3,
         slidesToScroll: 1,
         className: 'featured-carousel',
-        nextArrow: <SlickArrowLeft />,
-        prevArrow: <SlickArrowRight />,
+        prevArrow: <SlickArrowLeft />,
+        nextArrow: <SlickArrowRight />,
         responsive: [
             {
                 breakpoint: 1024,
