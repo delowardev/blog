@@ -78,6 +78,9 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
+    @include breakpoint('xs') {
+      min-height: 17rem;
+    }
     &::before {
       content: '';
       position: absolute;
