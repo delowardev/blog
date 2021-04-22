@@ -2,9 +2,17 @@
   h1 {
     font-size: 2.8rem;
     margin-bottom: 2rem;
+    @include breakpoint('xs') {
+      font-size: 2rem;
+      margin-bottom: 1rem ;
+    }
   }
   font-size: 1.5rem;
   line-height: 1.5;
+
+  @include breakpoint('xs') {
+    font-size: 1.2rem;
+  }
 }
 
 .contact-form {

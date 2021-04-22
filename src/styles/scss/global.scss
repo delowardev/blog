@@ -65,6 +65,13 @@ h1 {
   h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    @include breakpoint('xs') {
+      font-size: 2rem;
+    }
+  }
+  @include breakpoint('xs') {
+    font-size: 1rem;
+    line-height: 1.5;
   }
   font-size: 1.2rem;
   line-height: 1.8;
@@ -72,12 +79,16 @@ h1 {
 
 .notice {
   text-align: center;
-  padding: .8rem;
+  padding: .8rem 1.3rem;
   font-size: .9rem;
+  line-height: 1.5;
   background: linear-gradient(to right,#f219aa,#7026B9);
   color: #fff;
 }
 
 .sidebar-widget {
   width: 295px;
+  @include breakpoint('xs') {
+    width: 100%;
+  }
 }

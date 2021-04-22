@@ -4,6 +4,10 @@
     font-weight: 900;
     line-height: 1.33;
     margin: 0 0 1rem;
+
+    @include breakpoint('xs') {
+      font-size: 2rem;
+    }
   }
   .post-meta {
     display: flex;
@@ -11,6 +15,17 @@
       display: inline-block;
       color: var(--omega-dark);
       margin-right: 1rem;
+    }
+
+    @include breakpoint('xs') {
+      flex-wrap: wrap;
+      span {
+        display: block;
+        width: 100%;
+        &:not(:last-child) {
+          margin-bottom: .5rem;
+        }
+      }
     }
   }
   .post-left {
@@ -27,8 +42,15 @@
     line-height: 1.8;
     border-radius: 1rem 1rem .3rem .3rem;
     overflow: hidden;
+
+    @include breakpoint('xs') {
+      font-size: 1rem;
+    }
     .content {
       padding: 2.5rem 2rem;
+      @include breakpoint('xs') {
+        padding: 1.5rem 1rem;
+      }
     }
     p {
       margin-bottom: 2rem;
@@ -41,7 +63,6 @@
     padding: 2rem;
     background: white;
     border-radius: 1rem;
-    width: 295px;
     box-shadow: rgb(1 1 1 / 5%) 1px 1px 5px 0;
     text-align: center;
     .avatar {
