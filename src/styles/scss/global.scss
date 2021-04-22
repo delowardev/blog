@@ -84,6 +84,11 @@ h1 {
   line-height: 1.5;
   background: linear-gradient(to right,#f219aa,#7026B9);
   color: #fff;
+  &.is-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+  }
 }
 
 .sidebar-widget {
