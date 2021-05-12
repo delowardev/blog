@@ -27,6 +27,14 @@ Live demo: [https://v2-alpha.delowar.dev/](https://v2-alpha.delowar.dev/)
     CONTENTFUL_ACCESS_TOKEN=__VALUE__
     ```
 
+    for testing purpose, you can use those env values:
+
+    ```
+    GATSBY_FORMSPREE=xjvjkela
+    CONTENTFUL_SPACE_ID='1mwlvq26v004'
+    CONTENTFUL_ACCESS_TOKEN='cKLxbgp0EsG9faN7-4bO9fxBaJyc24paltNUDYTojHk'
+    ```
+
 3.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
