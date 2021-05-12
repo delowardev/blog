@@ -27,7 +27,7 @@ Live demo: [https://v2-alpha.delowar.dev/](https://v2-alpha.delowar.dev/)
     CONTENTFUL_ACCESS_TOKEN=__VALUE__
     ```
 
-    for testing purpose, you can use those env values:
+    for testing purpose, you can use these env values:
 
     ```
     GATSBY_FORMSPREE=xjvjkela
