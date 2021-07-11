@@ -25,8 +25,9 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: `@delowar.dev`,
-    description: `Learn with @delowardev`,
+    title: `Delowar Hossain`,
+    description: `Front-end developer`,
+    designation: `Front-end Engineer`,
     author: `@delowar`,
   },
   plugins: [

@@ -2,15 +2,15 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => {
+const Header = ({ title, designation }) => {
 
     const nav = [
         {
-            name: "Home",
+            name: "Blog",
             to: "/"
         },
         {
-            name: "Blog",
+            name: "All posts",
             to: "/blog"
         },
         {
@@ -26,7 +26,8 @@ const Header = ({ siteTitle }) => {
                     <div className="row justify-content-between align-items-center">
                         <div className="col-12 col-sm-auto branding-col">
                             <Link className='branding' to='/'>
-                                {siteTitle}
+                                {title}
+                                <small>{designation}</small>
                             </Link>
                         </div>
                         <div className="col-12 col-sm-auto nav-col">
@@ -52,11 +53,13 @@ const Header = ({ siteTitle }) => {
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+    title: PropTypes.string,
+    designation: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+    title: ``,
+    designation: ``,
 }
 
 export default Header

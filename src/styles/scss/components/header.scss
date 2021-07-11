@@ -15,8 +15,14 @@
     font-size: 1.2rem;
     text-decoration: none;
     font-weight: 700;
-    padding: 1rem;
+    padding: .5rem;
     color: var(--primary-heading);
+    small {
+      display: block;
+      font-size: 13px;
+      margin-top: 2px;
+      opacity: .7;
+    }
   }
 
 

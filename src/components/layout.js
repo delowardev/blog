@@ -11,36 +11,37 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+    const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title
+          title,
+          designation
         }
       }
     }
   `)
 
-  return (
-    <>
-      <div className="notice is-sticky">Notice: This site is under construction, all contents are fake</div>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div>
-        <main>{children}</main>
-        <footer className="footer">
-             <div className="container">
-                 © {new Date().getFullYear()} @delowar.dev, Built with
-                 {` `}
-                 <a href="https://www.gatsbyjs.com">Gatsby</a>
-             </div>
-        </footer>
-      </div>
-    </>
-  )
+    return (
+        <>
+            <div className="notice is-sticky">Notice: This site is under construction, all contents are fake</div>
+            <Header title={data.site.siteMetadata?.title} designation={data.site.siteMetadata?.designation} />
+            <div>
+                <main>{children}</main>
+                <footer className="footer">
+                    <div className="container">
+                        © {new Date().getFullYear()} @delowar.dev, Built with
+                        {` `}
+                        <a href="https://www.gatsbyjs.com">Gatsby</a>
+                    </div>
+                </footer>
+            </div>
+        </>
+    )
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 }
 
 export default Layout
